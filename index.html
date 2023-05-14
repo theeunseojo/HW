@@ -1,75 +1,68 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">  
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src ="arrays.js"></script>
+</head>
+<body>
+    
+</body>
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Î†àÏù¥ÏïÑÏõÉ</title>
-    <!-- css Ïó∞Í≤∞  -->
-    <link rel="stylesheet" href="./style.css">
-    <!--  fontawesome ÎùºÏù¥Î∏åÎü¨Î¶¨ Ïó∞Í≤∞-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-    <!-- goolefont Ìè∞Ìä∏ ÏÇΩÏûÖ -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonst.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family-Noto+Sans+KR&display=swap" rel="">
+    <title>∏∏ ≥™¿Ã ∞ËªÍ±‚</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
 
 </head>
+
 <body>
-    <nav>
-        <!-- div ÌÉúÍ∑∏ ÏÇ¨Ïö© for Í∑∏Î£πÌôî -->
-        <div class="container"> 
-            <!-- aÌÉúÍ∑∏ ÏÇ¨Ïö©Ìï¥ÏÑú ÌôàÏúºÎ°ú ÎèåÏïÑÏò§Í∏∞ -->
-            <h1 class="nav-logo"><a href="./index.html"><i class="fas fa-smile"></i>Layout</a></h1>
-            <div class="nav-menu">
-                <ul class="nav-btn">
-                    <li><a href="./index.html">Ìôà</a></li>
-                    <!-- # Î≤ÑÌäºÎßå ÎßåÎì§Í≥† , Ïù¥Îèô x -->
-                    <li><a href="#">ÏÜåÍ∞ú</a></li> 
-                    <li><a href="https://techit.education/" target="_blank">Techit</a></li>
-                </ul>
+
+    <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-lg">
+            <h1 class="text-center text-2xl font-bold text-indigo-600 sm:text-3xl">
+                ∏∏ ≥™¿Ã ∞ËªÍ±‚
+            </h1>
+
+            <p class="mx-auto mt-4 max-w-md text-center text-gray-500">
+                ∏∏ ≥™¿Ã ∞ËªÍ¿ª ∞£∆Ì«œ∞‘ :)
+            </p>
+
+
+            <div>
+                <label for="birthday" class="text-sm font-bold">ª˝≥‚ø˘¿œ</label>
+
+                <div class="relative mt-1">
+                    <input type="date" id="birthday"
+                        class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm" />
+                </div>
             </div>
-        </div>
-    </nav>
-    
-    <!-- Ïä¨Î°úÍ±¥ -->
-    <header class="hd">
-        <!-- div.container ÏÇ¨Ïö© -->
-        <div class="container">
-          <h2 class="hd-title">POSSIBILITY TO REALITY!</h2>
-          <p class="hd-content">Ïó¨Îü¨Î∂ÑÏùÑ ÏùëÏõêÌï©ÎãàÎã§ :)</p>
-        </div>
-    </header>
 
-    <section class="sec">
-        <div class="container">
+            <div>
+                <label for="age" class="text-sm font-bold">∏∏ ≥™¿Ã</label>
 
-            <article class="artc">
-                <div class="card-img">
-                    <img src="./animal1.jpg" alt="Ïù¥ÎØ∏ÏßÄ1">
-                </div>
-                <p>Ïù¥ÎØ∏ÏßÄ1</p>
-            </article>
-            <article class="artc">
-                <div class="card-img">
-                    <img src="./animal2.jpg" alt="Ïù¥ÎØ∏ÏßÄ2">
-                </div>
-                <p>Ïù¥ÎØ∏ÏßÄ2</p>
-            </article>
-            <article class="artc">
-                <div class="card-img">
-                    <img src="./animal3.jpg" alt="Ïù¥ÎØ∏ÏßÄ3">
-                </div>
-                <p>Ïù¥ÎØ∏ÏßÄ3</p>
-            </article>
-        </div>
-    </section>
+                <div class="relative mt-1" id="result">
 
-    <footer class="ft">
-        <div class="container">
-            <p>&copy; 2023 LIKELION. ALL rights reserved.</p>
+                </div>
+            </div>
+
+            <button id="submit" class="block w-full rounded-lg bg-indigo-600 mt-8 px-5 py-3 text-sm font-medium text-white">
+                ¡¶√‚«œ±‚
+            </button>
         </div>
-    </footer>
+    </div>
+
+    <script src="agecalculator-2.js"></script>
+
 </body>
+
 </html>
