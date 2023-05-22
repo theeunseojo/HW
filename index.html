@@ -1,68 +1,56 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src ="arrays.js"></script>
-</head>
+<html>
 <body>
-    
+    <div id="root"></div>
 </body>
-<!DOCTYPE html>
-<html lang="ko">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>만 나이 계산기</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
-
-</head>
-
-<body>
-
-    <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
-        <div class="mx-auto max-w-lg">
-            <h1 class="text-center text-2xl font-bold text-indigo-600 sm:text-3xl">
-                만 나이 계산기
-            </h1>
-
-            <p class="mx-auto mt-4 max-w-md text-center text-gray-500">
-                만 나이 계산을 간편하게 :)
-            </p>
-
-
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+    function App() {
+        const [amount, setAmount] = React.useState(0);
+        const [inverted, setInverted] = React.useState(false);
+        const onChange = (event) => {
+            setAmount(event.target.value);
+        };
+        const reset = () => {
+            setAmount(0);
+        };
+        const onInvert = () => {
+            reset();
+            setInverted((current) => !current);
+        };
+        return (
             <div>
-                <label for="birthday" class="text-sm font-bold">생년월일</label>
-
-                <div class="relative mt-1">
-                    <input type="date" id="birthday"
-                        class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm" />
+                <h1>Super Converter</h1>
+                <div>
+                    <label htmlFor="minutes">Minutes</label>
+                    <input
+                        value={inverted ? amount * 60 : amount}
+                        id="minutes"
+                        placeholer="Minutes"
+                        type="number"
+                        onChange={onChange}
+                        disabled={inverted === true}
+                    />
                 </div>
-            </div>
-
-            <div>
-                <label for="age" class="text-sm font-bold">만 나이</label>
-
-                <div class="relative mt-1" id="result">
-
+                <div>
+                    <label htmlFor="hours">Hours</label>
+                    <input
+                        value={inverted ? amount : Math.round(amount/60)}
+                        id="hours"
+                        placeholer="Hours"
+                        type="number"
+                        onChange={onChange}
+                        disabled={inverted === false}
+                    />
                 </div>
+                <button onClick={reset}>Reset</button>
+                <button onClick={onInvert}>{inverted ? "Turn Back" : "Invert"}</button>
             </div>
-
-            <button id="submit" class="block w-full rounded-lg bg-indigo-600 mt-8 px-5 py-3 text-sm font-medium text-white">
-                제출하기
-            </button>
-        </div>
-    </div>
-
-    <script src="agecalculator-2.js"></script>
-
-</body>
-
+        );
+    }
+    const root = document.getElementById("root");
+    ReactDOM.render(<App/>, root);
+</script>
 </html>
